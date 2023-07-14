@@ -1,4 +1,20 @@
+
+<?php use app\core\form\Form; ?>
+
 <h1>Register</h1>
+
+
+<?php $form = Form::begin('', "post"); ?>
+
+<?php echo $form->field($model, 'firstname') ?>
+<?php echo $form->field($model, 'lastname') ?>
+<?php echo $form->field($model, 'email') ?>
+<?php echo $form->field($model, 'password') ?>
+<?php echo $form->field($model, 'confirmPassword') ?>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+<?php Form::end(); ?>
 
 <form action="" method="post">
     <div class="row">
@@ -12,10 +28,8 @@
         <div class="col">
             <div class="form-group">
                 <label for="exampleInputEmail1">Last name</label>
-                <input type="text" name="lastname" class="form-control <?php echo $model->hasError('firstname') ? ' is-invalid' : '' ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <div class="invalid-feedback">
-                    <?php echo $model->getFirstError('firstname') ?>
-                </div>
+                <input type="text" name="lastname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
         </div>
